@@ -1,8 +1,8 @@
 :root {
-    --background-light: #f0f2fa;
-    --background-white: #f6f5ff;
+    --background-light: #ede0ff;
+    --background-white: #ffffff;
     --text-dark: #0a0040;
-    --color-primary: #6143ff;
+    --color-primary: #6144ff;
 }
 
 * {
@@ -18,15 +18,21 @@ body {
     height: 100vh;
     background: var(--background-white);
 }
+
 .container {
     width: 100%;
     height: 100%;
     display: flex;
 }
+
 .sidebar {
     width: 100px;
     background: var(--color-primary);
 }
+.sidebar img {
+    width: 100%;
+}
+
 nav {
     height: 100px;
     background: var(--background-light);
@@ -36,46 +42,184 @@ nav {
     justify-content: flex-end;
     padding: 20px;
 }
+
 .btn {
     padding: 20px 30px;
-    border: none;
-    background: var(--color-primary);
-    color: #fff;
     border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    border: 0;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid var(--color-primary);
+}
+.btn:hover {
+    transform: scale(1.05);
 }
 a.btn {
+    margin-left: 5px;
     text-decoration: none;
 }
 
-//.btn:hover {
-//  background: #fff;
-//color: var(--color-primary);
-//border: 1px solid var(--color-primary);
-//}
-
 .btn-primary {
     background: var(--color-primary);
-    color: ##fff;
+    color: #fff;
 }
+
 main {
     display: flex;
-    padding: 20px;
+    padding: 0px;
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 section.graph {
     width: 33%;
     height: 100%;
+    padding: 20px 20px 0 20px;
 }
 .graph_header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 h2 {
+    flex: 2;
+    font-size: 18px;
     display: inline-block;
 }
-hr.LinhaHeader {
-    width: 50px;
-    display: inline-block;
+.graph_header-line {
+    flex: 1;
+    width: 130px;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 2px;
+}
+.graph_header-date {
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.graph_header-subtitle {
+    margin-top: 10px;
+}
+.graph-placeholder {
+    background-color: #ccc;
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 35px;
+    background: url("/assets/images/graph.png");
+    background-size: contain;
+}
+.tasks_left_footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.list {
+    padding: 20px 20px 0 20px;
+    flex: 1;
+}
+.list_header {
+    display: flex;
+}
+.list_header-select {
+    background-color: tranparent;
+    border: 0;
+    font-weight: medium;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+.task_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+.task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--background-light);
+    transition: all 0.3s ease-in-out;
+}
+.task:hover {
+    transform: scale(1.05);
+    background-color: var(--background-light);
+    border-radius: hidden;
+}
+.title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.priority,
+.actions {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.actions a {
+    margin-right: 20px;
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+}
+.actions > a:hover {
+    transform: scale(1.5);
+}
+.sphere {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.task_title {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#create_task_section {
+    margin: auto;
+    padding-top: 20px;
+}
+#create_task_section > h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.inputArea {
+    display: block;
+    margin: 10px 0 20px 0;
+}
+.inputArea > label {
+    display: block;
+    margin-bottom: 5px;
+}
+.inputArea > input,
+.inputArea > select {
+    height: 40px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid var(--background-light);
+    padding: 5px 10px;
+}
+.inputArea > textarea {
+    height: 120px;
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid var(--background-light);
+    padding: 5px 10px;
+    margin-top: 10px;
 }
