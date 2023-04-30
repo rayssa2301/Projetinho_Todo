@@ -95,10 +95,13 @@ h2 {
     height: 2px;
 }
 .graph_header-date {
-    flex: 1;
-    justify-content: center;
     display: flex;
+    flex: 1;
+    min-width: 130px;
+
+    justify-content: center;
     align-items: center;
+
     font-size: 12px;
 }
 .graph_header-subtitle {
